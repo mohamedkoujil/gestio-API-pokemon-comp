@@ -1,0 +1,130 @@
+body {
+    background-color: rgb(173, 219, 159); /* Verde claro */
+}
+
+.verdanaFont {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.alignself-right {
+    align-self: flex-end;
+}
+
+.alignself-left {
+    align-self: flex-start;
+}
+
+.alignself-center {
+    align-self: center;
+}
+
+.margin05 {
+    margin: 0.5em;
+}
+
+.margin025 {
+    margin: 0.25em;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexStart {
+    justify-content: flex-start;
+}
+
+.flex {
+    display: flex;
+}
+
+.title {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 0.75em;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.img-pokemon {
+    width: 8em;
+}
+
+.fav-img {
+    background-color: rgb(112, 128, 250); /* Azul claro */
+    border-radius: 5px;
+    cursor: pointer;
+    width: 2.4em;
+    margin: 0;
+}
+
+.pokemonCard {
+    width: 9em;
+    background-color: rgb(255, 219, 88); /* Amarillo claro */
+    border: rgb(112, 128, 250) 5px solid; /* Azul claro */
+    border-radius: 10px;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+.serach {
+    width: 3.5em;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.serach:hover {
+    transform: scale(1.1);
+}
+
+.form-container {
+    width: fit-content;
+    margin: auto;
+    padding: 6em;
+    margin: -5em;
+}
+
+
+form input {
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: rgb(255, 219, 88);
+    border: rgb(112, 128, 250) 3px solid;
+}
+
+
+form input:focus {
+    outline: none;
+    border: 5px solid rgb(112, 128, 250);
+}
+
+#masInfo {
+    border: rgb(112, 128, 250) 3px solid;
+    background-color: #f7efab85;
+    border-radius: 10px;
+    width: 95%;
+}
+
+.buttonInfo {
+    background-color: rgb(112, 128, 250);
+    border: none;
+    color: white;
+    padding: 0.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.5em;
+}
+
+
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Pokemon API</title>
+</head>
+
+<body>
+    <main>
+        <div class="flex flexColumn center" id="app">
+            <div class="form-container center flex">
+                <form class="center" v-on:submit.prevent="verPokemon">
+                    <input id="inputUsr" v-model="pokemon" type="text" placeholder="Ej. Charmander" required>
+                </form>
+                <img class="serach alignself-center" src="images/lupa.png" @click="clickLupa"></img>
+                <button v-if="!masInfo" class="buttonInfo" @click="masInfo = !masInfo">Mas info</button>
+                <button v-else class="buttonInfo" @click="masInfo = !masInfo" style="background-color: rgb(186, 224, 255); color: black;">Mas info</button>
+            </div>
+
+            <pokemon-card :pokemon-data="pokemonData" :favorite="isInFavorites(pokemonData)" :img="imgLink(pokemonData)" :info="masInfo" :ok="ok" @togglefav="toggleFavorite(pokemonData)"></pokemon-card>
+
+            <div v-if="pokemonNoEncontrado">No se ha encontrado el pokemon</div>
+
+            <!--
+            <div class="flex">
+                <div v-for="pokemon in allPokemon" :key="pokemon">
+                    <div class="pokemonCard flexColumn center verdanaFont">
+                        <img class="alignself-right fav-img" @click="toggleFavorite(pokemon)" src="images/fav.png"></img>
+                        <img class="img-pokemon" :src="pokemon?.sprites?.front_default">
+                        <div class="title">{{ pokemon.name }}</div class="title">
+                        <div v-show="masInfo" >
+                            <div v-for="type in pokemon.types">
+                                <div class="margin025">{{ type.type.name }}</div>
+                            </div>
+                            <div v-for="ability in pokemon.abilities">
+                                <div class="margin025">{{ ability.ability.name }}</div>
+                            </div>
+                            <div v-for="stat in pokemon.stats">
+                                <div class="margin025">{{ stat.stat.name }}: {{ stat.base_stat }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+
+
+            <h2 class="alignself-left">Favoritos</h2>
+            <div class="alignself-left" v-if="favoritos.length == 0">No tienes favoritos</div>
+            <div v-else class="flex wrap alignself-left">
+                <div class="flex" v-for="fav in favoritos" :key="fav">
+                    <pokemon-card :pokemon-data="fav" :favorite="isInFavorites(fav)" :img="imgLink(fav)" :info="masInfo" :ok="true" @togglefav="toggleFavorite(fav)"></pokemon-card>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script src="pokemoncard.js"></script>
+    
+
+    <script>
+        
+        app.mount('#app');
+    </script>
+</body>
+
+</html>
